@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: fit-content;
   max-width: 700px; /* typical readable column width */
   text-align: left;
     transform: translateY(50%);
@@ -42,6 +42,8 @@ p {
   margin: 0 0 1.5rem 0; 
   color: dimgray;
   text-align: left;
+  width: 35ch;
+  height: 5ch;
   line-height: 1.6;
   word-wrap: break-word; /* wrap text properly */
 }
