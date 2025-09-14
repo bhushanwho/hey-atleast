@@ -17,27 +17,31 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  place-items: center;
+  align-items: flex-start; /* top-align content */
   font-family: 'IBM Plex Mono', monospace;
   min-width: 320px;
   min-height: 70vh;
 }
 
 .container {
-  display: inline-block;
+  width: 100%;
+  max-width: 700px; /* typical readable column width */
   text-align: left;
+    transform: translateY(50%);
 }
 
 h1 {
-  font-size: 7rem;
-  margin: 0 0 0 0;
-  text-align: center;
+  font-size: 6rem; /* still large but not absurd */
+  margin: 0 0 1rem 0; /* spacing below heading */
+  text-align: left;  /* left-align heading for blog style */
+  line-height: 1.1;
 }
 
 p {
-  font-size: 2rem;
-  margin: 0 0 0 0;
-  color:dimgray;
+  font-size: 1.6rem; 
+  margin: 0 0 1.5rem 0; 
+  color: dimgray;
   text-align: left;
-  max-width: 100%;
+  line-height: 1.6;
+  word-wrap: break-word; /* wrap text properly */
 }
