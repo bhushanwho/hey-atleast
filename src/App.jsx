@@ -4,16 +4,19 @@ import { Typewriter } from 'react-simple-typewriter'
 
 function App() {
 
+  const fallback_resp = " aren't rate-limiting a silly little project's LLM calls. . . . . . . . . . . . oh wait."
+  let response = " heehee"
+
   return (
     <div className="container">
       <h1> hey,<br></br> at least</h1>
       <p>you
         <Typewriter
-          words={[' are a cute little monkey boy but what if this becomes more']}
+          words={[fallback_resp]}
           loop={1}
           cursor
           cursorStyle='_'
-          typeSpeed={70}
+          typeSpeed={50}
         />
       </p>
     </div>
