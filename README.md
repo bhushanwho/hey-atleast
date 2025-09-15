@@ -52,13 +52,18 @@ npx wrangler secret put GEMINI_API_KEY
 ```
 and follow the appropriate instruction.
 
-## 3. run the worker locally
+## 3. run the worker
 
 from the `worker` directory,
 ```bash
 pnpm run dev
 ```
 this should start the worker, likely on `127.0.0.1:8787`. take note of this, for updating in the frontend
+
+to deploy it as a worker itself, create your Cloudflare Worker on the website and use
+```bash
+npx wrangler deploy
+```
 
 ## 4. updating API URL in the frontend
 
