@@ -13,37 +13,39 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* top-align content */
+  align-items: center;
   font-family: 'IBM Plex Mono', monospace;
-  min-width: 320px;
-  min-height: 70vh;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
 .container {
-  width: fit-content;
-  max-width: 700px; /* typical readable column width */
+  width: 100%;
+  max-width: 700px; 
   text-align: left;
-    transform: translateY(50%);
 }
 
 h1 {
-  font-size: 6rem; /* still large but not absurd */
-  margin: 0 0 1rem 0; /* spacing below heading */
-  text-align: left;  /* left-align heading for blog style */
+  font-size: clamp(3rem, 10vw, 6rem);
+  margin: 0 0 1rem 0;
+  text-align: left;
   line-height: 1.1;
 }
 
 p {
-  font-size: 1.6rem; 
-  margin: 0 0 1.5rem 0; 
+  font-size: 1.25rem; 
+  margin: 0 0 1.5rem 0;
   color: dimgray;
   text-align: left;
-  width: 35ch;
-  height: 5ch;
+  max-width: 40ch;
   line-height: 1.6;
-  word-wrap: break-word; /* wrap text properly */
+  overflow-wrap: break-word;
 }
