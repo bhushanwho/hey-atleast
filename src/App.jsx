@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from 'react'
 
 function App() {
   const fallback_resp =
-    " actively exhaust and rate-limit a silly little project's LLM calls. . . . . oh wait."
+    "you don't actively exhaust and rate-limit a silly little project's LLM calls. . . . . oh wait."
 
   const [line, setLine] = useState("")
 
