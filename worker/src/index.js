@@ -40,7 +40,7 @@ export default {
           {
             parts: [
               {
-                text: `Give a very short, corny, meaningless, out-of-nowhere-funny continuation to a statement that starts with 'hey, at least you don't '. Give your output in simple plaintext, no symbols or formatting.  Do NOT include 'hey, at least you don't' in the output. Use seed: ${generate({ min: 3, max: 10 })}`
+                text: `Give a very short, corny, meaningless, out-of-nowhere-funny continuation to a statement that starts with 'hey, at least you don't '. Give your output in simple plaintext, no symbols or formatting.  Do NOT include 'hey, at least you don't' in the output. Use seed: ${generate({ min: 3, max: 6 })}`
               }
             ]
           }
