@@ -6,9 +6,10 @@ not sure.
 check it out yourself: [hey-atleast.pages.dev](https://hey-atleast.pages.dev/)
 
 here's some screenshots
-<img width="1280" height="809" alt="image" src="https://github.com/user-attachments/assets/ce5380c1-fecd-4a5a-ac77-e48034c8e7f8" />
-<img width="1280" height="744" alt="image" src="https://github.com/user-attachments/assets/ddc39ec5-2da8-4668-829f-90d5a7c3f535" />
-<img width="1280" height="928" alt="image" src="https://github.com/user-attachments/assets/8a5f359e-cbc9-4197-95f1-2aabb8b35068" />
+<img width="1163" height="677" alt="image" src="https://github.com/user-attachments/assets/82dfb506-632e-4962-8438-666d351c79cb" />
+<img width="1145" height="694" alt="image" src="https://github.com/user-attachments/assets/9f553459-9d00-4b36-afd3-e52c2d5593d0" />
+<img width="1184" height="688" alt="image" src="https://github.com/user-attachments/assets/5ef6aa32-9bcb-4623-a08f-3791715a5591" />
+
 
 
 # what
@@ -20,3 +21,66 @@ not necessarily a project, more of a demonstration and experimentation of deploy
 and maybe getting feet wetter with React.
 
 certainly not CSS though, the CSS is still bad and i'm too dumb to comprehend fixing it, leave alone fix it.
+
+# how to run
+
+this project is basically a vite app (root) and a cloudflare worker (`/worker`)
+
+## 1. install dependencies
+
+for the vite app, root directory
+```bash
+pnpm install
+```
+
+for the worker
+```bash
+cd worker
+pnpm install
+```
+
+## 2. configure secrets
+
+in the worker folder, create a `.env` with
+```bash
+GEMINI_API_KEY=your_api_key_here
+```
+
+if deploying to cloudflare worker, set the secret with
+```bash
+npx wrangler secret put GEMINI_API_KEY
+```
+and follow the appropriate instruction.
+
+## 3. run the worker locally
+
+from the `worker` directory,
+```bash
+pnpm run dev
+```
+this should start the worker, likely on `127.0.0.1:8787`. take note of this, for updating in the frontend
+
+## 4. updating API URL in the frontend
+
+in the root `App.jsx`, find the `fetch` call
+```js
+const res = await fetch("https://hey-atleast-worker.bhushanwho.workers.dev/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({})
+      })
+```
+
+replace the URL with either
+- your local worker URL (from earlier)
+- your deployed worker URL
+
+## 5. run the frontend
+
+```bash
+pnpm run dev
+```
+
+this will start the vite app.
+
+further, cloudflare pages deployment was done through the repo itself.
